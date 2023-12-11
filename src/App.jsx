@@ -3,6 +3,30 @@ import "./App.css";
 import imslogo from "./assets/image/imslogo.jpg";
 import { toast } from "react-toastify";
 function App() {
+  const [formData, setFormData] = useState({
+    admin_id: "",
+    password: "",
+  });
+
+  const handleChange = (event) => {
+    const newValue = event.target.value.replace(/\s+/g, " "); // Remove white spaces
+    setFormData({
+      ...formData,
+      [event.target.name]: newValue,
+    });
+  };
+
+  const handleSubmit = async () => {
+    event.preventDefault();
+    if (formData.admin_id == "") {
+      toast.error("Admin Id is empty");
+      return;
+    }
+    if (formData.password == "") {
+      toast.error("Password is empty");
+      return;
+    }
+  };
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900">
@@ -36,6 +60,8 @@ function App() {
                     className="bg-gray-50 border border-gray-300 text-gray-700 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Admin Id"
                     required=""
+                    value={formData.admin_id}
+                    onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -52,6 +78,8 @@ function App() {
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
+                    value={formData.p}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="flex items-center justify-between">
@@ -84,6 +112,7 @@ function App() {
                 <button
                   type="submit"
                   className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  onClick={handleSubmit}
                 >
                   Sign in
                 </button>
