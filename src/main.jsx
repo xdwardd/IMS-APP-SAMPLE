@@ -5,6 +5,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 import Dashboard from "./components/Dashboard.jsx";
+import Profile from "./components/Profile.jsx";
+import Students from "./components/Students.jsx";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ToastContainer
@@ -18,6 +21,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       pauseOnHover={false}
     />
     {/* <App /> */}
-    <Dashboard />
+    {/* <Dashboard /> */}
+    <Profile />
+    {/* <Students /> */}
   </React.StrictMode>
 );

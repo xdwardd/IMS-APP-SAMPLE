@@ -21,6 +21,6 @@ All significant development changes for this project are documented in this file
 
 
 
+### v23.12.13 - December 13, 2023
 
-
-I strive for continuous improvement, so stay tuned for more exciting updates!
+- **Adding Flowbite Plugin:** Adding flowbite plugin to make the design better 
