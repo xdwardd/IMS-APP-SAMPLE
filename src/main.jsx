@@ -5,9 +5,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 import Dashboard from "./components/Dashboard.jsx";
-import Profile from "./components/Profile.jsx";
-import Students from "./components/Students.jsx";
 
+import Students from "./components/Students.jsx";
+import TeacherProfile from "./components/TeacherProfile.jsx";
+import "flowbite";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ToastContainer
@@ -20,9 +21,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       draggable={false}
       pauseOnHover={false}
     />
-    {/* <App /> */}
+    <App />
+
     {/* <Dashboard /> */}
-    <Profile />
-    {/* <Students /> */}
+    {/* <TeacherProfile /> */}
+    {/* {/* <Students /> */}
   </React.StrictMode>
 );

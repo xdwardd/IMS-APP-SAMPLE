@@ -3,8 +3,8 @@ import Home from "./Home";
 import Students from "./Students";
 import Teachers from "./Teachers";
 import imslogo from "../assets/image/imslogo.jpg";
-
-const Dashboard = () => {
+import "flowbite";
+const Dashboard = ({ setPage }) => {
   const [activeNav, setActiveNav] = useState("home");
   let content = null;
   switch (activeNav) {
@@ -179,19 +179,26 @@ const Dashboard = () => {
                   </li>
                 </ul>
                 <div>
-                  <ul className="px-4 pb-4 text-sm font-medium">
-                    {navsFooter.map((item, idx) => (
-                      <li key={idx}>
-                        <a
-                          href={item.href}
-                          className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150"
-                        >
-                          <div className="text-gray-500">{item.icon}</div>
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+                  <div
+                    className="px-4 pb-4 text-sm flex flex-row gap-2 font-medium cursor-pointer"
+                    onClick={() => setPage("login")}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                      />
+                    </svg>
+                    Logout
+                  </div>
                   <div className="py-4 px-4 border-t">
                     <div className="flex items-center gap-x-4">
                       <img
@@ -217,7 +224,50 @@ const Dashboard = () => {
           </nav>
         </div>
         <div className="w-full">
-          <main className="h-screen">{content}</main>
+          <div>{content}</div>
+          {/* <footer class="bg-white w-full dark:bg-gray-900 mt-5">
+            <div class="w-full max-w-screen-xl mx-auto p-2 md:py-8">
+              <div class="sm:flex sm:items-center sm:justify-between">
+                <a
+                  href="https://flowbite.com/"
+                  class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+                >
+                  <img src={imslogo} class="h-8" alt="Flowbite Logo" />
+                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
+                </a>
+                <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                  <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">
+                      Licensing
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:underline">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+              <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                © 2023{" "}
+                <a href="https://flowbite.com/" class="hover:underline">
+                  IMS Academy
+                </a>
+                . All Rights Reserved.
+              </span>
+            </div>
+          </footer> */}
         </div>
       </div>
     </>
